@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Test: Present Simple</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; }
+        .section { margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
+        .question { margin-bottom: 15px; }
+        input[type="text"] { border: 1px solid #ccc; padding: 5px; border-radius: 4px; width: 200px; }
+        .feedback { font-weight: bold; margin-left: 10px; }
+        .correct { color: green; }
+        .wrong { color: red; }
+        button { background: #27ae60; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        #result-summary { margin-top: 20px; font-size: 1.2em; font-weight: bold; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>MINI-TEST: MASTERING PRESENT SIMPLE</h1>
+    <p style="text-align: center;">Thời gian làm bài: 45 phút</p>
+    
+    <div id="student-info">
+        <label>Họ và tên học sinh:</label>
+        <input type="text" id="studentName" required placeholder="Nhập tên của bạn...">
+    </div>
+
+    <form id="quizForm">
+        <div class="section">
+            <h3>PHẦN 1: CHIA ĐỘNG TỪ (AFFIRMATIVE FORM)</h3>
+            <div class="question">1. My brother (play) <input type="text" data-ans="plays"> badminton every afternoon. <span class="feedback"></span></div>
+            <div class="question">2. I (read) <input type="text" data-ans="read"> books before going to bed. <span class="feedback"></span></div>
+            </div>
+
+        <div class="section">
+            <h3>PHẦN 2: CHUYỂN CÂU SANG DẠNG PHỦ ĐỊNH</h3>
+            <div class="question">11. Lisa walks to work. → Lisa <input type="text" data-ans="doesn't walk"> to work. <span class="feedback"></span></div>
+            <div class="question">12. I like eating carrots. → I <input type="text" data-ans="don't like"> eating carrots. <span class="feedback"></span></div>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Nộp bài</button>
+    </form>
+
+    <div id="result-summary"></div>
+</div>
+
+<script>
+    function submitQuiz() {
+        const name = document.getElementById('studentName').value;
+        if (!name) { alert("Vui lòng nhập tên!"); return; }
+
+        let score = 0;
+        let wrongDetails = [];
+        const inputs = document.querySelectorAll('input[data-ans]');
+        
+        inputs.forEach((input, index) => {
+            const userAnswer = input.value.trim().toLowerCase();
+            const correctAnswer = input.getAttribute('data-ans').toLowerCase();
+            const feedback = input.nextElementSibling;
+
+            if (userAnswer === correctAnswer) {
+                score++;
+                feedback.textContent = " ✓";
+                feedback.className = "feedback correct";
+            } else {
+                feedback.textContent = ` ✗ (Đáp án: ${correctAnswer})`;
+                feedback.className = "feedback wrong";
+                wrongDetails.push(`Câu ${index + 1}: ${userAnswer || 'Bỏ trống'}`);
+            }
+        });
+
+        const finalScore = `${score}/${inputs.length}`;
+        document.getElementById('result-summary').innerHTML = `Kết quả của ${name}: ${finalScore}`;
+
+        // Gửi dữ liệu về Google Sheets (Cần setup Web App Script trước)
+        sendDataToSheet(name, finalScore, wrongDetails.join(", "));
+    }
+
+    function sendDataToSheet(name, score, wrongs) {
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby0dF0lsSuGbZ1kvmBMlnop0kJ-Azeg_TsnUPKAa4sPt8U_RuXlSTPjekNQNxWhGHJr/exec'; 
+        const data = new URLSearchParams({
+            'name': name,
+            'score': score,
+            'wrongs': wrongs,
+            'time': new Date().toLocaleString()
+        });
+
+        fetch(scriptURL, { method: 'POST', body: data })
+        .then(response => alert('Đã lưu kết quả vào hệ thống!'))
+        .catch(error => console.error('Lỗi!', error.message));
+    }
+</script>
+
+</body>
+</html>
