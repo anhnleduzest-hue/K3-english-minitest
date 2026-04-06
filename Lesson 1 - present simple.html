@@ -3,46 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini-Test: Present Simple</title>
+    <title>Mini-Test: Mastering Present Simple - Linh Anh</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; padding: 20px; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; text-align: center; }
-        .section { margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
-        .question { margin-bottom: 15px; }
-        input[type="text"] { border: 1px solid #ccc; padding: 5px; border-radius: 4px; width: 200px; }
+        /* CSS: GIAO DIỆN CHÍNH */
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            background-color: #f0f4f8; 
+            color: #333; 
+            line-height: 1.6; 
+            padding: 20px; 
+        }
+        .container { 
+            max-width: 900px; 
+            margin: auto; 
+            background: white; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+        }
+        h1 { color: #2c3e50; text-align: center; font-size: 2.5em; margin-bottom: 10px; }
+        
+        /* BANNER */
+        .main-banner {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* BẢNG NGỮ PHÁP (GRAMMAR REVIEW) */
+        .summary-box { 
+            background-color: #eef2ff; 
+            border: 2px solid #4f46e5; 
+            border-radius: 15px; 
+            padding: 25px; 
+            margin-bottom: 40px; 
+        }
+        .summary-title { 
+            color: #4f46e5; 
+            font-weight: bold; 
+            font-size: 1.4em; 
+            margin-bottom: 15px; 
+            display: flex; 
+            align-items: center; 
+        }
+        .rule-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+        .rule-table th, .rule-table td { border: 1px solid #e2e8f0; padding: 15px; text-align: center; }
+        .rule-table th { background-color: #4f46e5; color: white; }
+        .formula { font-weight: bold; color: #e11d48; }
+
+        /* PHẦN BÀI TẬP */
+        .section { margin-top: 40px; }
+        h3 { 
+            background: #fbbf24; 
+            color: #92400e; 
+            padding: 10px 20px; 
+            border-radius: 50px; 
+            display: inline-block;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .question { 
+            margin-bottom: 15px; 
+            padding: 15px; 
+            border-bottom: 1px dashed #cbd5e1;
+            transition: 0.3s;
+        }
+        .question:hover { background-color: #f8fafc; }
+        
+        input[type="text"] { 
+            border: none; 
+            border-bottom: 2px solid #94a3b8; 
+            padding: 5px; 
+            width: 180px; 
+            font-weight: bold; 
+            text-align: center;
+            outline: none;
+            background: transparent;
+        }
+        input[type="text"]:focus { border-bottom: 2px solid #10b981; color: #059669; }
+
         .feedback { font-weight: bold; margin-left: 10px; }
-        .correct { color: green; }
-        .wrong { color: red; }
-        button { background: #27ae60; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
-        #result-summary { margin-top: 20px; font-size: 1.2em; font-weight: bold; text-align: center; }
+        .correct { color: #10b981; }
+        .wrong { color: #ef4444; }
+
+        /* NÚT NỘP BÀI */
+        .btn-submit { 
+            display: block; 
+            width: 100%; 
+            background: #4f46e5; 
+            color: white; 
+            padding: 18px; 
+            border: none; 
+            border-radius: 12px; 
+            font-size: 1.3em; 
+            font-weight: bold; 
+            cursor: pointer; 
+            margin-top: 40px;
+            transition: 0.3s;
+        }
+        .btn-submit:hover { background: #4338ca; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4); }
+
+        #result-summary { 
+            margin-top: 30px; 
+            padding: 25px; 
+            border-radius: 15px; 
+            text-align: center; 
+            font-size: 1.6em; 
+            font-weight: bold; 
+            display: none;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h1>MINI-TEST: MASTERING PRESENT SIMPLE</h1>
-    <p style="text-align: center;">Thời gian làm bài: 45 phút</p>
+    <p style="text-align: center; color: #64748b; font-weight: bold;">Linh Anh's English Class | Thời gian: 45 phút</p>
     
-    <div id="student-info">
-        <label>Họ và tên học sinh:</label>
-        <input type="text" id="studentName" required placeholder="Nhập tên của bạn...">
+    <img src="https://static.vecteezy.com/system/resources/previews/023/633/407/non_2x/daily-routine-with-simple-clocks-set-with-kid-funny-cartoon-character-illustration-isolated-on-white-background-vector.jpg" class="main-banner" alt="Daily Routine">
+
+    <div class="summary-box">
+        <div class="summary-title">💡 Grammar Review: Present Simple</div>
+        <table class="rule-table">
+            <thead>
+                <tr>
+                    <th>Chủ ngữ (Subject)</th>
+                    <th>Khẳng định (+)</th>
+                    <th>Phủ định (-)</th>
+                    <th>Câu hỏi Yes/No (?)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>I, You, We, They</b><br>(Danh từ số nhiều)</td>
+                    <td><span class="formula">V (inf)</span></td>
+                    <td><span class="formula">don't + V</span></td>
+                    <td><span class="formula">Do + S + V?</span></td>
+                </tr>
+                <tr>
+                    <td><b>He, She, It</b><br>(Danh từ số ít)</td>
+                    <td><span class="formula">V-s/es</span></td>
+                    <td><span class="formula">doesn't + V</span></td>
+                    <td><span class="formula">Does + S + V?</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="margin-top: 10px; font-size: 0.9em; color: #4b5563;"><i>*Lưu ý: Trong câu phủ định và câu hỏi, động từ chính luôn ở dạng nguyên thể (V-inf).</i></p>
+    </div>
+
+    <div style="margin-bottom: 30px; background: #f8fafc; padding: 25px; border-radius: 15px; border-left: 5px solid #4f46e5;">
+        <label style="font-size: 1.1em;"><b>Họ và tên học sinh:</b></label>
+        <input type="text" id="studentName" style="width: 300px; margin-left: 10px; border-bottom: 2px solid #4f46e5;" placeholder="Nhập tên của bạn...">
     </div>
 
     <form id="quizForm">
         <div class="section">
-            <h3>PHẦN 1: CHIA ĐỘNG TỪ (AFFIRMATIVE FORM)</h3>
+            <h3>PHẦN 1: CHIA ĐỘNG TỪ TRONG NGOẶC (AFFIRMATIVE FORM)</h3>
             <div class="question">1. My brother (play) <input type="text" data-ans="plays"> badminton every afternoon. <span class="feedback"></span></div>
             <div class="question">2. I (read) <input type="text" data-ans="read"> books before going to bed. <span class="feedback"></span></div>
-            </div>
-
-        <div class="section">
-            <h3>PHẦN 2: CHUYỂN CÂU SANG DẠNG PHỦ ĐỊNH</h3>
-            <div class="question">11. Lisa walks to work. → Lisa <input type="text" data-ans="doesn't walk"> to work. <span class="feedback"></span></div>
-            <div class="question">12. I like eating carrots. → I <input type="text" data-ans="don't like"> eating carrots. <span class="feedback"></span></div>
+            <div class="question">3. She (study) <input type="text" data-ans="studies"> English at school. <span class="feedback"></span></div>
+            <div class="question">4. They (eat) <input type="text" data-ans="eat"> lunch at the canteen. <span class="feedback"></span></div>
+            <div class="question">5. The sun (rise) <input type="text" data-ans="rises"> in the East. <span class="feedback"></span></div>
+            <div class="question">6. My mother (cook) <input type="text" data-ans="cooks"> delicious meals. <span class="feedback"></span></div>
+            <div class="question">7. We (go) <input type="text" data-ans="go"> to the cinema on Saturdays. <span class="feedback"></span></div>
+            <div class="question">8. The cat (catch) <input type="text" data-ans="catches"> mice in the garden. <span class="feedback"></span></div>
+            <div class="question">9. You (speak) <input type="text" data-ans="speak"> English very well. <span class="feedback"></span></div>
+            <div class="question">10. He (fix) <input type="text" data-ans="fixes"> his bike every weekend. <span class="feedback"></span></div>
         </div>
 
-        <button type="button" onclick="submitQuiz()">Nộp bài</button>
+        <div class="section">
+            <h3>PHẦN 2: CHUYỂN CÂU SANG DẠNG PHỦ ĐỊNH (NEGATIVE FORM)</h3>
+            <div class="question">11. Lisa walks to work. → Lisa <input type="text" data-ans="doesn't walk"> to work. <span class="feedback"></span></div>
+            <div class="question">12. I like eating carrots. → I <input type="text" data-ans="don't like"> eating carrots. <span class="feedback"></span></div>
+            <div class="question">13. They play soccer on Sundays. → They <input type="text" data-ans="don't play"> soccer on Sundays. <span class="feedback"></span></div>
+            <div class="question">14. Michael works at a school. → Michael <input type="text" data-ans="doesn't work"> at a school. <span class="feedback"></span></div>
+            <div class="question">15. We have breakfast at 9:00. → We <input type="text" data-ans="don't have"> breakfast at 9:00. <span class="feedback"></span></div>
+            <div class="question">16. The bird flies in the sky. → The bird <input type="text" data-ans="doesn't fly"> in the sky. <span class="feedback"></span></div>
+            <div class="question">17. My friends watch TV after dinner. → My friends <input type="text" data-ans="don't watch"> TV after dinner. <span class="feedback"></span></div>
+            <div class="question">18. It rains in the desert. → It <input type="text" data-ans="doesn't rain"> in the desert. <span class="feedback"></span></div>
+            <div class="question">19. You do your homework late. → You <input type="text" data-ans="don't do"> your homework late. <span class="feedback"></span></div>
+            <div class="question">20. Peter and Jessica get up at 6:00. → Peter and Jessica <input type="text" data-ans="don't get up"> at 6:00. <span class="feedback"></span></div>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <img src="https://cdn.vectorstock.com/i/1000v/33/63/school-girl-daily-routine-vector-38943363.jpg" style="max-width: 400px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);" alt="Study routine">
+        </div>
+
+        <div class="section">
+            <h3>PHẦN 3: TRẢ LỜI CÂU HỎI YES/NO</h3>
+            <div class="question">21. Does Lisa get up at 7:15? → <input type="text" data-ans="Yes, she does"> <span class="feedback"></span></div>
+            <div class="question">22. Does Peter go to work by car? → <input type="text" data-ans="No, he doesn't"> <span class="feedback"></span></div>
+            <div class="question">23. Do Lisa and Michael have lunch at a restaurant? → <input type="text" data-ans="Yes, they do"> <span class="feedback"></span></div>
+            <div class="question">24. Does Jessica work at a hospital? → <input type="text" data-ans="No, she doesn't"> <span class="feedback"></span></div>
+            <div class="question">25. Does Michael play the sax after dinner? → <input type="text" data-ans="Yes, he does"> <span class="feedback"></span></div>
+            <div class="question">26. Do Peter and Gordon watch TV after dinner? → <input type="text" data-ans="No, they don't"> <span class="feedback"></span></div>
+            <div class="question">27. Does Gordon work at a post office? → <input type="text" data-ans="Yes, he does"> <span class="feedback"></span></div>
+            <div class="question">28. Does Jessica go to work by bus? → <input type="text" data-ans="No, she doesn't"> <span class="feedback"></span></div>
+            <div class="question">29. Do Michael and Gordon get up at 8:00? → <input type="text" data-ans="Yes, they do"> <span class="feedback"></span></div>
+            <div class="question">30. Does Lisa dance after dinner? → <input type="text" data-ans="No, she doesn't"> <span class="feedback"></span></div>
+        </div>
+
+        <div class="section">
+            <h3>PHẦN 4: VIẾT CÂU HỎI YES/NO CHO CÂU TRẢ LỜI</h3>
+            <div class="question">31. <input type="text" data-ans="Do you play the guitar">? → Yes, I play the guitar. <span class="feedback"></span></div>
+            <div class="question">32. <input type="text" data-ans="Does she like soup">? → No, she doesn't like soup. <span class="feedback"></span></div>
+            <div class="question">33. <input type="text" data-ans="Do they go to school by bus">? → Yes, they go to school by bus. <span class="feedback"></span></div>
+            <div class="question">34. <input type="text" data-ans="Does Michael work in a hospital">? → Yes, Michael works in a hospital. <span class="feedback"></span></div>
+            <div class="question">35. <input type="text" data-ans="Do you study on Sundays">? → No, we don't study on Sundays. <span class="feedback"></span></div>
+            <div class="question">36. <input type="text" data-ans="Does the cat drink milk">? → Yes, the cat drinks milk. <span class="feedback"></span></div>
+            <div class="question">37. <input type="text" data-ans="Does Peter watch TV at 8:00">? → No, Peter doesn't watch TV at 8:00. <span class="feedback"></span></div>
+            <div class="question">38. <input type="text" data-ans="Do Lisa and Michael read after dinner">? → Yes, Lisa and Michael read after dinner. <span class="feedback"></span></div>
+            <div class="question">39. <input type="text" data-ans="Does Jessica eat salad for lunch">? → Yes, Jessica eats salad for lunch. <span class="feedback"></span></div>
+            <div class="question">40. <input type="text" data-ans="Do your parents cook dinner">? → No, my parents don't cook dinner. <span class="feedback"></span></div>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="submitQuiz()">NỘP BÀI VÀ XEM ĐIỂM</button>
     </form>
 
     <div id="result-summary"></div>
@@ -51,37 +227,43 @@
 <script>
     function submitQuiz() {
         const name = document.getElementById('studentName').value;
-        if (!name) { alert("Vui lòng nhập tên!"); return; }
+        if (!name) { alert("Vui lòng nhập tên học sinh trước khi nộp bài!"); return; }
 
         let score = 0;
+        let total = 0;
         let wrongDetails = [];
         const inputs = document.querySelectorAll('input[data-ans]');
         
         inputs.forEach((input, index) => {
-            const userAnswer = input.value.trim().toLowerCase();
-            const correctAnswer = input.getAttribute('data-ans').toLowerCase();
+            total++;
+            const userAnswer = input.value.trim().toLowerCase().replace(/[.?]/g, "");
+            const correctAnswer = input.getAttribute('data-ans').toLowerCase().replace(/[.?]/g, "");
             const feedback = input.nextElementSibling;
 
             if (userAnswer === correctAnswer) {
                 score++;
-                feedback.textContent = " ✓";
+                feedback.innerHTML = " ✓";
                 feedback.className = "feedback correct";
             } else {
-                feedback.textContent = ` ✗ (Đáp án: ${correctAnswer})`;
+                feedback.innerHTML = ` ✗ (Đúng là: ${input.getAttribute('data-ans')})`;
                 feedback.className = "feedback wrong";
                 wrongDetails.push(`Câu ${index + 1}: ${userAnswer || 'Bỏ trống'}`);
             }
         });
 
-        const finalScore = `${score}/${inputs.length}`;
-        document.getElementById('result-summary').innerHTML = `Kết quả của ${name}: ${finalScore}`;
+        const resultDiv = document.getElementById('result-summary');
+        resultDiv.style.display = "block";
+        resultDiv.style.backgroundColor = score > (total/2) ? "#d1fae5" : "#fee2e2";
+        resultDiv.style.color = score > (total/2) ? "#065f46" : "#991b1b";
+        resultDiv.innerHTML = `Chúc mừng ${name}! Bạn đạt được ${score}/${total} điểm.`;
 
-        // Gửi dữ liệu về Google Sheets (Cần setup Web App Script trước)
-        sendDataToSheet(name, finalScore, wrongDetails.join(", "));
+        // Gửi dữ liệu về Google Sheets
+        sendDataToSheet(name, `${score}/${total}`, wrongDetails.join(", "));
+        window.scrollTo(0, document.body.scrollHeight);
     }
 
     function sendDataToSheet(name, score, wrongs) {
-        const scriptURL = 'https://script.google.com/macros/s/AKfycby0dF0lsSuGbZ1kvmBMlnop0kJ-Azeg_TsnUPKAa4sPt8U_RuXlSTPjekNQNxWhGHJr/exec'; 
+        const scriptURL = 'LINK_WEB_APP_CỦA_BẠN'; // Thay link Apps Script của Anh vào đây
         const data = new URLSearchParams({
             'name': name,
             'score': score,
@@ -90,8 +272,8 @@
         });
 
         fetch(scriptURL, { method: 'POST', body: data })
-        .then(response => alert('Đã lưu kết quả vào hệ thống!'))
-        .catch(error => console.error('Lỗi!', error.message));
+        .then(response => console.log('Đã lưu kết quả!'))
+        .catch(error => console.error('Lỗi gửi dữ liệu!', error.message));
     }
 </script>
 
