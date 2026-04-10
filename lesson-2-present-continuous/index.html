@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocab & Grammar Mastery - K3 Class</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f0f4f8; color: #334155; line-height: 1.6; padding: 20px; }
+        .container { max-width: 850px; margin: auto; background: white; padding: 35px; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        h1 { color: #1e293b; text-align: center; font-size: 1.8em; text-transform: uppercase; margin-bottom: 10px; }
+        .main-banner { width: 100%; border-radius: 15px; margin-bottom: 25px; }
+        
+        .section { margin-top: 35px; border-top: 2px solid #e2e8f0; padding-top: 20px; }
+        h3 { background: #4f46e5; color: white; padding: 8px 25px; border-radius: 50px; display: inline-block; font-size: 1em; margin-bottom: 20px; }
+        
+        .question { margin-bottom: 18px; padding: 12px; border-radius: 10px; border-bottom: 1px dashed #cbd5e1; }
+        .question:hover { background-color: #f8fafc; }
+
+        input[type="text"] { border: none; border-bottom: 2px solid #94a3b8; padding: 4px 8px; font-weight: bold; outline: none; background: transparent; color: #4f46e5; transition: 0.3s; }
+        input[type="text"]:focus { border-bottom: 2px solid #4f46e5; }
+        
+        .feedback { font-weight: bold; margin-left: 10px; font-size: 0.9em; }
+        .correct { color: #10b981; }
+        .wrong { color: #ef4444; }
+
+        .btn-submit { display: block; width: 100%; background: #4f46e5; color: white; padding: 20px; border: none; border-radius: 15px; font-size: 1.2em; font-weight: bold; cursor: pointer; margin-top: 40px; transition: 0.3s; }
+        .btn-submit:hover { background: #4338ca; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3); }
+        
+        #result-summary { margin-top: 25px; padding: 20px; border-radius: 15px; text-align: center; font-size: 1.4em; font-weight: bold; display: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>VOCABULARY & GRAMMAR MASTERY</h1>
+    <p style="text-align: center; color: #64748b;">Ms.Linh Anh's English Lesson</p>
+    
+    <img src="https://github.com/anhnleduzest-hue/K3-english-minitest/blob/main/image.png?raw=true" class="main-banner" alt="Banner bài tập">
+
+    <div style="background: #e0e7ff; padding: 20px; border-radius: 15px; margin-bottom: 30px; border: 1px solid #c7d2fe;">
+        <label><b>Student Name:</b></label>
+        <input type="text" id="studentName" style="width: 250px; border-bottom: 2px solid #4f46e5;" placeholder="Enter your name...">
+    </div>
+
+    <form id="quizForm">
+        <div class="section">
+            <h3>I. VOCABULARY: UNIT 1 WORDS</h3>
+            <div class="question">1. We play football and run in the <input type="text" data-ans="playground" style="width: 120px;"> (p _ _ y _ _ _ _ _ d). <span class="feedback"></span></div>
+            <div class="question">2. Monkeys are very good at <input type="text" data-ans="climbing" style="width: 100px;"> (c _ _ m _ _ _ g) trees. <span class="feedback"></span></div>
+            <div class="question">3. Can you <input type="text" data-ans="hop" style="width: 60px;"> (h _ _) like a frog? <span class="feedback"></span></div>
+            <div class="question">4. Look! The girls are <input type="text" data-ans="skipping" style="width: 100px;"> (s _ _ p _ _ _ g) with a rope. <span class="feedback"></span></div>
+            <div class="question">5. I like to <input type="text" data-ans="roller skate" style="width: 120px;"> (r _ _ l _ r s _ _ t _) in the park. <span class="feedback"></span></div>
+            <div class="question">6. Please <input type="text" data-ans="move" style="width: 70px;"> (m _ _ e) to the front of the class. <span class="feedback"></span></div>
+            <div class="question">7. We <input type="text" data-ans="talk" style="width: 70px;"> (t _ _ k) with our friends every day. <span class="feedback"></span></div>
+            <div class="question">8. The children <input type="text" data-ans="walk" style="width: 70px;"> (w _ _ k) to school together. <span class="feedback"></span></div>
+            <div class="question">9. Let's <input type="text" data-ans="watch" style="width: 70px;"> (w _ _ c h) TV after dinner. <span class="feedback"></span></div>
+            <div class="question">10. The boy is <input type="text" data-ans="jumping" style="width: 90px;"> (j _ _ p _ _ g) up and down. <span class="feedback"></span></div>
+        </div>
+
+        <div class="section">
+            <h3>II. PRESENT CONTINUOUS (am/is/are + V-ing)</h3>
+            <div class="question">11. (+) Look! The chef <input type="text" data-ans="is stirring"> (stir) the soup. <span class="feedback"></span></div>
+            <div class="question">12. (+) Listen! The birds <input type="text" data-ans="are singing"> (sing) loudly. <span class="feedback"></span></div>
+            <div class="question">13. (+) I <input type="text" data-ans="am walking"> (walk) to the park right now. <span class="feedback"></span></div>
+            <div class="question">14. (+) The octopus <input type="text" data-ans="is sitting"> (sit) on the high chair. <span class="feedback"></span></div>
+            <div class="question">15. (+) We <input type="text" data-ans="are having"> (have) a great time. <span class="feedback"></span></div>
+            <div class="question">16. (-) The dog <input type="text" data-ans="is not swimming"> (not/swim) in the water. <span class="feedback"></span></div>
+            <div class="question">17. (-) I <input type="text" data-ans="am not watching"> (not/watch) TV. <span class="feedback"></span></div>
+            <div class="question">18. (-) They <input type="text" data-ans="are not running"> (not/run) round the park. <span class="feedback"></span></div>
+            <div class="question">19. (-) The man <input type="text" data-ans="is not sleeping"> (not/sleep) on the bed. <span class="feedback"></span></div>
+            <div class="question">20. (-) She <input type="text" data-ans="is not skipping"> (not/skip) in the yard. <span class="feedback"></span></div>
+            <div class="question">21. (?) <input type="text" data-ans="Is" style="width: 50px;"> the walrus <input type="text" data-ans="playing" style="width: 90px;"> (play) the guitar? <span class="feedback"></span></div>
+            <div class="question">22. (?) <input type="text" data-ans="Are" style="width: 50px;"> you <input type="text" data-ans="doing" style="width: 90px;"> (do) your homework? <span class="feedback"></span></div>
+            <div class="question">23. (?) <input type="text" data-ans="Are" style="width: 50px;"> the mice <input type="text" data-ans="dancing" style="width: 90px;"> (dance) near the pool? <span class="feedback"></span></div>
+            <div class="question">24. (?) <input type="text" data-ans="Is" style="width: 50px;"> Nam <input type="text" data-ans="climbing" style="width: 90px;"> (climb) the ladder? <span class="feedback"></span></div>
+            <div class="question">25. (?) <input type="text" data-ans="Are" style="width: 50px;"> they <input type="text" data-ans="moving" style="width: 90px;"> (move) to the new class? <span class="feedback"></span></div>
+        </div>
+
+        <div class="section">
+            <h3>III. BE GOOD AT & LIKE + V-ING</h3>
+            <div class="question">26. (+) I am good at <input type="text" data-ans="drawing"> (draw) funny pictures. <span class="feedback"></span></div>
+            <div class="question">27. (+) My sister likes <input type="text" data-ans="reading"> (read) comic books. <span class="feedback"></span></div>
+            <div class="question">28. (+) They are good at <input type="text" data-ans="speaking"> (speak) English. <span class="feedback"></span></div>
+            <div class="question">29. (+) He likes <input type="text" data-ans="taking"> (take) photos. <span class="feedback"></span></div>
+            <div class="question">30. (+) We are good at <input type="text" data-ans="swimming"> (swim) in the pool. <span class="feedback"></span></div>
+            <div class="question">31. (-) I <input type="text" data-ans="am not good at"> (not/be good at) climbing walls. <span class="feedback"></span></div>
+            <div class="question">32. (-) She <input type="text" data-ans="doesn't like"> (not/like) watching scary movies. <span class="feedback"></span></div>
+            <div class="question">33. (-) The students <input type="text" data-ans="are not good at"> (not/be good at) roller skating. <span class="feedback"></span></div>
+            <div class="question">34. (-) My brother <input type="text" data-ans="doesn't like"> (not/like) doing the laundry. <span class="feedback"></span></div>
+            <div class="question">35. (-) You <input type="text" data-ans="are not good at"> (not/be good at) hopping. <span class="feedback"></span></div>
+            <div class="question">36. (Lan / like) <input type="text" data-ans="Lan likes"> (talk) to her teacher. <span class="feedback"></span></div>
+            <div class="question">37. (My friends / not / be good at) <input type="text" data-ans="My friends are not good at"> (play) football. <span class="feedback"></span></div>
+            <div class="question">38. (The cat / love) <input type="text" data-ans="The cat loves"> (chase) the butterfly. <span class="feedback"></span></div>
+            <div class="question">39. (You / like) <input type="text" data-ans="Do you like"> (listen) to pop music? <span class="feedback"></span></div>
+            <div class="question">40. (I / not / like) <input type="text" data-ans="I don't like"> (walk) in the rain. <span class="feedback"></span></div>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="submitQuiz()">NỘP BÀI VÀ XEM ĐIỂM</button>
+    </form>
+    <div id="result-summary"></div>
+</div>
+
+<script>
+    function submitQuiz() {
+        const name = document.getElementById('studentName').value;
+        if (!name) { alert("Anh ơi, điền tên cho các em đã nè!"); return; }
+
+        let score = 0, total = 0, wrongList = [];
+        const inputs = document.querySelectorAll('input[data-ans]');
+
+        inputs.forEach((input, i) => {
+            total++;
+            const userAns = input.value.trim().toLowerCase();
+            const correctAns = input.getAttribute('data-ans').toLowerCase();
+            const feedback = input.nextElementSibling || document.createElement('span');
+            if(!input.nextElementSibling) input.parentNode.appendChild(feedback);
+
+            if (userAns === correctAns) {
+                score++; feedback.innerHTML = " ✓"; feedback.className="feedback correct";
+            } else {
+                feedback.innerHTML = ` ✗ (${input.getAttribute('data-ans')})`; feedback.className="feedback wrong";
+                wrongList.push(`Câu ${i+1}: ${userAns || 'Trống'}`);
+            }
+        });
+
+        const res = document.getElementById('result-summary');
+        res.style.display = "block";
+        res.innerHTML = `Kết quả của ${name}: ${score}/${total} câu đúng!`;
+        res.style.backgroundColor = score > total/2 ? "#dcfce7" : "#fee2e2";
+
+        sendToSheet(name, `${score}/${total}`, wrongList.join(", "));
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function sendToSheet(n, s, w) {
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwxEEbkiejIndZwgiqnGdSEJVT0aSmWNqCp6lJdPG2ngr5bivTrezI8Kge8vfW4Us2C/exec';
+        const p = new URLSearchParams({ name: n, score: s, wrongs: w, time: new Date().toLocaleString() });
+        fetch(scriptURL, { method: 'POST', body: p, mode: 'no-cors' });
+    }
+</script>
+</body>
+</html>
